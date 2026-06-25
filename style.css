@@ -1,4 +1,8 @@
-{
+/* ==========================
+   Global Styles
+========================== */
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -13,41 +17,54 @@ body {
     min-height: 100vh;
 }
 
-
+/* ==========================
+   Calculator Container
+========================== */
 
 .calculator {
     width: 360px;
     background: #202124;
     padding: 25px;
     border-radius: 18px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, .35);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
 }
 
+/* ==========================
+   Display
+========================== */
 
 .display {
     width: 100%;
     height: 70px;
-
-    background: #111827;
-    color: white;
+    margin-bottom: 20px;
 
     border: none;
     border-radius: 10px;
 
+    background: #111827;
+    color: white;
+
     padding: 0 15px;
 
-    font-size: 2rem;
     text-align: right;
+    font-size: 2rem;
 
-    margin-bottom: 20px;
+    outline: none;
 }
 
+/* ==========================
+   Button Grid
+========================== */
 
 .buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 12px;
 }
+
+/* ==========================
+   General Button Style
+========================== */
 
 button {
     height: 65px;
@@ -67,13 +84,77 @@ button {
 }
 
 button:hover {
-    background: #505050;
     transform: translateY(-2px);
+    background: #505050;
 }
 
 button:active {
     transform: scale(0.96);
 }
+
+/* ==========================
+   Number Buttons
+========================== */
+
+button:not(.operator):not(.equals):not(.clear):not(.backspace) {
+    background: #3b3b3b;
+}
+
+button:not(.operator):not(.equals):not(.clear):not(.backspace):hover {
+    background: #555555;
+}
+
+/* ==========================
+   Operator Buttons
+========================== */
+
+.operator {
+    background: #0b69f5;
+}
+
+.operator:hover {
+    background: #d97706;
+}
+
+/* ==========================
+   Equals Button
+========================== */
+
+.equals {
+    background: #2563eb;
+}
+
+.equals:hover {
+    background: #1d4ed8;
+}
+
+/* ==========================
+   Clear Button
+========================== */
+
+.clear {
+    background: #dc2626;
+}
+
+.clear:hover {
+    background: #b91c1c;
+}
+
+/* ==========================
+   Backspace Button
+========================== */
+
+.backspace {
+    background: #6b7280;
+}
+
+.backspace:hover {
+    background: #4b5563;
+}
+
+/* ==========================
+   Responsive Design
+========================== */
 
 @media (max-width: 450px) {
 
@@ -82,14 +163,14 @@ button:active {
         padding: 20px;
     }
 
+    .display {
+        font-size: 1.8rem;
+        height: 65px;
+    }
+
     button {
         height: 60px;
         font-size: 1.2rem;
-    }
-
-    .display {
-        height: 65px;
-        font-size: 1.8rem;
     }
 
 }
